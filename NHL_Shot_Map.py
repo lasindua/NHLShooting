@@ -39,7 +39,7 @@ st.subheader("""Data from the 2020-2021 Season""")
 #Loading player info for user input
 @st.cache
 def Player_data(nrows):
-    roster_teams=pd.read_csv('C:/Users/lasin/NHLWebApp/nhl-stats.csv', header=[1])
+    roster_teams=pd.read_csv('https://raw.githubusercontent.com/lasindua/NHLShooting/main/nhl-stats.csv', header=[1])
     playerName=roster_teams.iloc[:,0:3]
     return playerName
 
@@ -69,7 +69,7 @@ ax.set_yticklabels(labels=[''], fontsize = 18, alpha =0.7, minor=False)
 ax.set_title(full_name +' Shot Map', fontdict={'family':'Times New Roman', 'style':'normal','weight':'semibold', 'size':24})
 
 #Image from pillow
-I = Image.open('C:/Users/lasin/Half_rink.png')
+I = Image.open('https://github.com/lasindua/NHLShooting/blob/main/Half_rink.png')
 ax.imshow(I);width, height = I.size
 
 #Scaling factor and offset to align image and data system
@@ -85,7 +85,7 @@ S = 3.8*scalingx
 #Loading endpoint data from season
 @st.cache
 def NHL_Data(nrows):
-    with open('C:/Users/lasin/NHLWebApp/2020FullDataset.pkl', 'rb') as f:
+    with open('https://github.com/lasindua/NHLShooting/blob/main/2020FullDataset.pkl', 'rb') as f:
         game_data = pickle.load(f)
     return game_data
 
