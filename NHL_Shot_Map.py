@@ -85,7 +85,7 @@ S = 3.8*scalingx
 #Loading endpoint data from season
 @st.cache
 def NHL_Data(nrows):
-    with open('2020FullDataset.pkl', 'rb') as f:
+    with open('https://github.com/lasindua/NHLShooting/blob/de5f0b7178081c5b2f463df05d1dc21ffb5002cc/2020FullDataset.pkl', 'rb') as f:
         game_data = pickle.load(f)
     return game_data
 
