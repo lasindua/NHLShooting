@@ -16,6 +16,7 @@ import math
 from PIL import Image
 
 ##Parsed through api to retrieve relevent info necessary from endpoints, stored in pickle format
+##This was done in a seperate environment to serialize it to a lower python version for compatibility issues
 # game_data = []
 # year = '2020'
 # season_type = '02'
@@ -85,7 +86,7 @@ S = 3.8*scalingx
 #Loading endpoint data from season
 @st.cache
 def NHL_Data(nrows):
-    with open('2020FullDataset.pkl', 'rb') as f:
+    with open('2020GamesDataset.pkl', 'rb') as f:
         game_data = pickle.load(f)
     return game_data
 
